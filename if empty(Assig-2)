@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+template<typename T, size_t N>
+bool isArrayEmpty(const T (&arr)[N]) {
+    return N == 0;
+}
+int main() {
+    int emptyArray[] = {};
+    int nonEmptyArray[] = {1, 2, 3};
+    if (isArrayEmpty(emptyArray)) {
+        cout << "The array is empty." << endl;
+    } else {
+        cout << "The array is not empty." << endl;
+    }
+    if (isArrayEmpty(nonEmptyArray)) {
+        cout << "The array is empty." << endl;
+    } else {
+        cout << "The array is not empty." << endl;
+    }
+    return 0;
+}
