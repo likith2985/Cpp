@@ -1,0 +1,23 @@
+#include <iostream>
+using namespace std;
+void printReverse(const char *str) {
+    if (str == nullptr)
+        return;
+    const char *end = str;
+    while (*end != '\0') {
+        end++;
+    }
+    end--; 
+    while (end >= str) {
+        cout << *end;
+        end--;
+    }
+}
+int main() {
+    const char *str = "Hello, World!";
+    cout << "Original string: " << str << endl;
+    cout << "Reversed string: ";
+    printReverse(str);
+    cout << endl;
+    return 0;
+}
