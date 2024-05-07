@@ -1,0 +1,18 @@
+#include <iostream>
+using namespace std;
+int calculatePoints(int wins, int draws, int losses) {
+    int points = (wins * 3) + (draws * 1) + (losses * 0);
+    return points;
+}
+int main() {
+    int wins, draws, losses;
+    cout << "Enter number of wins: ";
+    cin >> wins;
+    cout << "Enter number of draws: ";
+    cin >> draws;
+    cout << "Enter number of losses: ";
+    cin >> losses;
+    int points = calculatePoints(wins, draws, losses);
+    cout << "Total points: " << points << endl;
+    return 0;
+}
