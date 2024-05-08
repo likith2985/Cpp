@@ -1,0 +1,19 @@
+#include <iostream>
+using namespace std;
+int find_occurrences(int arr[], int size, int value) {
+    int count = 0;
+    for (int i = 0; i < size; i++) {
+        if (arr[i] == value) {
+            count++;
+        }
+    }
+    return count;
+}
+int main() {
+    int arr[] = {1, 2, 3, 2, 2, 4, 5, 2};
+    int size = sizeof(arr) / sizeof(arr[0]);
+    int value = 2;
+    int num_occurrences = find_occurrences(arr, size, value);
+    cout << "Number of occurrences of " << value << " in the array: " << num_occurrences << endl;
+    return 0;
+}
