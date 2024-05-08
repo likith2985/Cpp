@@ -1,0 +1,26 @@
+#include <iostream>
+using namespace std;
+int main() {
+    int arr[] = {10, 20, 4, 45, 30, 50};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    int first, second;
+    if (n < 2) {
+        cout << "Invalid input, array size should be at least 2." << endl;
+        return 0;
+    }
+    first = second = INT_MIN;
+    for (int i = 0; i < n; i++) {
+        if (arr[i] > first) {
+            second = first;
+            first = arr[i];
+        } else if (arr[i] > second && arr[i] != first) {
+            second = arr[i];
+        }
+    }
+    if (second == INT_MIN) {
+        cout << "There is no second largest element." << endl;
+    } else {
+        cout << "The second largest element in the array is: " << second << endl;
+    }
+    return 0;
+}
