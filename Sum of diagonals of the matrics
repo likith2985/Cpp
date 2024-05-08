@@ -1,0 +1,29 @@
+#include <iostream>
+int sumOfDiagonals(int matrix[][10], int n) {
+    int sum = 0;
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            if (i == j) {
+                sum += matrix[i][j];
+            }
+            if (i + j == n - 1) {
+                sum += matrix[i][j];
+            }
+        }
+    }
+    return sum;
+}    
+int main() {
+    int matrix[10][10];
+    int n;
+    std::cout << "Enter the size of the square matrix: ";
+    std::cin >> n;
+    std::cout << "Enter the elements of the matrix:\n";
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            std::cin >> matrix[i][j];
+        }
+    }
+    std::cout << "Sum of diagonals: " << sumOfDiagonals(matrix, n) << std::endl;
+    return 0;
+}
